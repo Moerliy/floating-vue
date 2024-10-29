@@ -1,8 +1,10 @@
 stages:
+  - sync
   - deploy
 
 repo_pull_sync:
   image: danger89/repo_mirror_pull:latest
+  stage: sync
   rules:
     - if: '$CI_PIPELINE_SOURCE == "schedule"'
     - if: $REMOTE_URL
