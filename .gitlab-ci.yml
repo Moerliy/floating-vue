@@ -1,3 +1,6 @@
+stages:
+  - deploy
+
 repo_pull_sync:
   image: danger89/repo_mirror_pull:latest
   rules:
@@ -16,3 +19,11 @@ repo_pull_sync:
     - git fetch upstream
     - git checkout upstream/$REMOTE_BRANCH
     - git push "https://${GITLAB_USER_LOGIN}:${ACCESS_TOKEN}@${CI_REPOSITORY_URL#*@}" "HEAD:${CI_DEFAULT_BRANCH}"
+
+publish-npm:
+  image: node:latest
+  stage: deploy
+  script:
+    - echo "@scope:registry=https://${CI_SERVER_HOST}/api/v4/projects/${CI_PROJECT_ID}/packages/npm/" > .npmrc
+    - echo "//${CI_SERVER_HOST}/api/v4/projects/${CI_PROJECT_ID}/packages/npm/:_authToken=${CI_JOB_TOKEN}" >> .npmrc
+    - npm publish
