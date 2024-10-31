@@ -1,5 +1,5 @@
 {
-  "name": "floating-vue-monorepo",
+  "name": "@h2t/floating-vue-monorepo",
   "packageManager": "pnpm@8.6.2",
   "version": "5.2.3",
   "scripts": {
