@@ -1,5 +1,25 @@
 # Changelog
 
+## v5.2.3
+
+
+### 🚀 Enhancements
+
+  - **gitlab-ci:** Add ci mirror sync (83d78c3)
+  - **ci:** Add npm publish (78f8ab5)
+  - **version:** Pump (d2c6a85)
+
+### 🩹 Fixes
+
+  - **ci:** Issue with branch pushing (cbabeae)
+  - **ci:** Add stage to mirror (bd0f9c3)
+  - **ci:** Change scope to h2t (6b1e3be)
+  - **ci:** Issue with publish not working (4f963bf)
+
+### ❤️  Contributors
+
+- Moritz Gleissner <moritz@gleissner.de>
+
 ## v5.2.2
 
 
